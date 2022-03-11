@@ -1,4 +1,4 @@
-package entity;
+
 
 public class MallGoods {
 	private Long goodsId;

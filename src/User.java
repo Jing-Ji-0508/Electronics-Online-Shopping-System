@@ -1,4 +1,4 @@
-package entity;
+
 public abstract class User {
 	public String userId;
 	public String userName;
@@ -39,10 +39,10 @@ public abstract class User {
 		return"[ID: "+ userId + "Name: "+ userName + "Passward: " + userPassword + "]";
 	}
 	
-	public void updateUserInfo(User user, String userId, String userName, String userPassword) {
-		user.setUserId(userId);
-		user.setUserName(userName);
-		user.setUserPassword(userPassword);
+	public void updateUserInfo(String userId, String userName, String userPassword) {
+		this.setUserId(userId);
+		this.setUserName(userName);
+		this.setUserPassword(userPassword);
 		System.out.println("User information updated successfully");
 	}
 
