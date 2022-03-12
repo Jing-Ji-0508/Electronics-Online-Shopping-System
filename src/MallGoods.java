@@ -4,7 +4,6 @@ public class MallGoods {
 	private Long goodsId;
 	private String goodsName;
 	private String goodsIntro;
-	private Long goodsCategoryId;
 	private double originalPrice;
 	private double sellPrice;
 	private int stockNum;
@@ -12,13 +11,12 @@ public class MallGoods {
 	private Long categoryId;
 	private String categoryName;
 	
-	public MallGoods(Long goodsId, String goodsName, String goodsIntro, Long goodsCategoryId, double originalPrice,
+	public MallGoods(Long goodsId, String goodsName, String goodsIntro, double originalPrice,
 			double sellPrice, int stockNum, String goodsSellStatus, Long categoryId, String categoryName) {
 		super();
 		this.goodsId = goodsId;
 		this.goodsName = goodsName;
 		this.goodsIntro = goodsIntro;
-		this.goodsCategoryId = goodsCategoryId;
 		this.originalPrice = originalPrice;
 		this.sellPrice = sellPrice;
 		this.stockNum = stockNum;
@@ -51,13 +49,6 @@ public class MallGoods {
 		this.goodsIntro = goodsIntro;
 	}
 
-	public Long getGoodsCategoryId() {
-		return goodsCategoryId;
-	}
-
-	public void setGoodsCategoryId(Long goodsCategoryId) {
-		this.goodsCategoryId = goodsCategoryId;
-	}
 
 	public double getOriginalPrice() {
 		return originalPrice;
@@ -110,10 +101,12 @@ public class MallGoods {
 	@Override
 	public String toString() {
 		return "MallGoods [goodsId=" + goodsId + ", goodsName=" + goodsName + ", goodsIntro=" + goodsIntro
-				+ ", goodsCategoryId=" + goodsCategoryId + ", originalPrice=" + originalPrice + ", sellPrice="
-				+ sellPrice + ", stockNum=" + stockNum + ", goodsSellStatus=" + goodsSellStatus + ", categoryId="
-				+ categoryId + ", categoryName=" + categoryName + "]";
+				+ ", originalPrice=" + originalPrice + ", sellPrice=" + sellPrice + ", stockNum=" + stockNum
+				+ ", goodsSellStatus=" + goodsSellStatus + ", categoryId=" + categoryId + ", categoryName="
+				+ categoryName + "]";
 	}
+
+	
 	
 	
 }

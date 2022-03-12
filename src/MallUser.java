@@ -1,5 +1,5 @@
 
-
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MallUser extends User {
@@ -65,31 +65,63 @@ public class MallUser extends User {
 	}
 	
 	public void mallUserLogin() {
+		System.out.println("Welcome! Mall User: " + this.getUserName());
+	}
+	
+	public ArrayList<MallGoods> addCartItem(ArrayList<MallGoods> shoppingCart, MallGoods mallGoods) {
+		try{
+			shoppingCart.add(mallGoods);
+		}
+		catch(NullPointerException e) {
+			System.out.println("This product does not exsit.");
+		}
+		return shoppingCart;
 		
 	}
 	
-	public void addCartItem() {
+	public ArrayList<MallGoods> updateCartItem(ArrayList<MallGoods> shoppingCart, MallGoods mallGoods) {
+		ArrayList<MallGoods> updatedShoppingCart = new ArrayList<MallGoods> ();
+		//TODO UpdateCartItem
+		return updatedShoppingCart;
+	}
+	
+	public ArrayList<MallGoods> deleteCartItem(ArrayList<MallGoods> shoppingCart, MallGoods mallGoods) {
+		if (shoppingCart.removeIf(e -> e.equals(mallGoods))) {
+			System.out.println("This item has been removed from the shopping cart");
+		}
+		else
+			System.out.println("Cannot find this item in the shopping cart");
+		return shoppingCart;
 		
 	}
 	
-	public void updateCartItem() {
-		
-	}
-	
-	public void deleteCartItem() {
-		
-	}
-	
-	public void checkOut() {
+	public ArrayList<MallGoods> checkOut(ArrayList<MallGoods> shoppingCart, ArrayList<MallGoods> orderItem) {
+		orderItem = (ArrayList<MallGoods>)shoppingCart.clone();
+		shoppingCart.clear();
+		return orderItem;
 	
 	}
 	
-	public void cancelOrder() {
-		
+	public void cancelOrder(MallOrder mallOrder) {
+		if (mallOrder.getOrderStatus() == "Canceled")
+			System.out.println("This order has been already canceled, operation failed.");
+		else {
+			mallOrder.setOrderStatus("Canceled");
+			System.out.println("This order has been successfully canceled.");
+			System.out.println(mallOrder);
+		}
 	}
 	
-	public void finishOrder() {
-		
+	public void finishOrder(MallOrder mallOrder) {
+		if (mallOrder.getOrderStatus() == "Canceled")
+			System.out.println("This order has been already canceled, operation failed.");
+		else if (mallOrder.getOrderStatus() == "Finished")
+			System.out.println("This order is finished already, operation failed.");
+		else {
+			mallOrder.setOrderStatus("Finished");
+			System.out.println("This order is now finished, come back!");
+		}
+
 	}
 
 }
