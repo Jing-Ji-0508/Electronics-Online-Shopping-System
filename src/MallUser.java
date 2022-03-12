@@ -59,8 +59,9 @@ public class MallUser extends User {
 				+ userPassword + "]";
 	}
 	
-	public void register() {
-		
+	public void register(String userId, String userName, String userPassword, String address, boolean isDeleted, boolean lockedFlag, Date createTime) {
+		MallUser newMallUser = new MallUser(userId, userName, userPassword, address, isDeleted, lockedFlag, createTime);
+		System.out.println("Register successful!");
 	}
 	
 	public void mallUserLogin() {

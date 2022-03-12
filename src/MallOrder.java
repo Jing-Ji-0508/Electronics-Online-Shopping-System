@@ -5,14 +5,14 @@ public class MallOrder {
 	private Long orderId;
 	private String orderNo;
 	private Long userId;
-	private int totalPrice;
-	private byte payStatus;
-	private byte orderStatus;
+	private double totalPrice;
+	private String payStatus;
+	private String orderStatus;
 	private String userAddress;
-	private byte isDeleted;
+	private boolean isDeleted;
 	private String extraInfo;
 	
-	public MallOrder(Long orderId, String orderNo, Long userId, int totalPrice, byte payStatus, byte orderStatus, String userAddress, byte isDeleted, String extraInfo) {
+	public MallOrder(Long orderId, String orderNo, Long userId, double totalPrice, String payStatus, String orderStatus, String userAddress, boolean isDeleted, String extraInfo) {
 		this.orderId = orderId;
 		this.orderNo = orderNo;
 		this.totalPrice = totalPrice;
@@ -47,7 +47,7 @@ public class MallOrder {
 		this.userId = userId;
 	}
 	
-	public int getTotalPrice() {
+	public double getTotalPrice() {
 		return totalPrice;
 	}
 	
@@ -55,19 +55,19 @@ public class MallOrder {
 		this.totalPrice = totalPrice;
 	}
 	
-	public byte getPayStatus() {
+	public String getPayStatus() {
 		return payStatus;
 	}
 	
-	public void setPayStatus(byte payStatus) {
+	public void setPayStatus(String payStatus) {
 		this.payStatus = payStatus;
 	}
 	
-	public byte getOrderStatus() {
+	public String getOrderStatus() {
 		return orderStatus;
 	}
 	
-	public void setOrderStatus(byte orderStatus) {
+	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 	
@@ -79,11 +79,11 @@ public class MallOrder {
 		this.userAddress = userAddress;
 	}
 	
-	public byte getIsDeleted() {
+	public boolean getIsDeleted() {
 		return isDeleted;
 	}
 	
-	public void setIsDeleted(byte isDeleted) {
+	public void setIsDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
 	

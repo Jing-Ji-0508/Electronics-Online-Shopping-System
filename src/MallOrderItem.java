@@ -7,11 +7,11 @@ public class MallOrderItem {
 	private Long orderId;
 	private Long goodsId;
 	private String goodsName;
-	private int sellingPrice;
+	private double sellingPrice;
 	private int goodsCount;
 	private Date createTime;
 	
-	public MallOrderItem(Long orderItemId, Long orderId, Long goodsId, String goodsName, int sellingPrice, int goodsCount, Date createTime) {
+	public MallOrderItem(Long orderItemId, Long orderId, Long goodsId, String goodsName, double sellingPrice, int goodsCount, Date createTime) {
 		this.orderItemId = orderItemId;
 		this.orderId = orderId;
 		this.goodsId = goodsId;
@@ -53,11 +53,11 @@ public class MallOrderItem {
 		this.goodsName = goodsName;
 	}
 
-	public int getSellingPrice() {
+	public double getSellingPrice() {
 		return sellingPrice;
 	}
 
-	public void setSellingPrice(int sellingPrice) {
+	public void setSellingPrice(double sellingPrice) {
 		this.sellingPrice = sellingPrice;
 	}
 
