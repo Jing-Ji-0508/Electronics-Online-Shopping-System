@@ -5,7 +5,7 @@ import java.util.Date;
 public class ShoppingCart {
 	private Long cartItemId;
 	private Long userId;
-	private Long goodsId;
+	private Long [] goodsId;
 	private int goodsCount;
 	private boolean isDeleted;
 	private Date createDate;
@@ -39,11 +39,11 @@ public class ShoppingCart {
 		this.userId = userId;
 	}
 
-	public Long getGoodsId() {
+	public Long [] getGoodsId() {
 		return goodsId;
 	}
 
-	public void setGoodsId(Long goodsId) {
+	public void setGoodsId(Long [] goodsId) {
 		this.goodsId = goodsId;
 	}
 
