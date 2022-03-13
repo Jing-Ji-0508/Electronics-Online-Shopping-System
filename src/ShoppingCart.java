@@ -1,5 +1,4 @@
 
-
 import java.util.Date;
 
 public class ShoppingCart {
@@ -11,8 +10,8 @@ public class ShoppingCart {
 	private Date createDate;
 	private Date updateDate;
 	
-	public ShoppingCart(Long cartItemId, Long userId, Long goodsId, int goodsCount, boolean isDeleted, Date createDate,
-			Date updateDate) {
+	public ShoppingCart(Long cartItemId, Long userId, Long[] goodsId, int goodsCount, boolean isDeleted,
+			Date createDate, Date updateDate) {
 		super();
 		this.cartItemId = cartItemId;
 		this.userId = userId;
@@ -27,6 +26,7 @@ public class ShoppingCart {
 		return cartItemId;
 	}
 
+
 	public void setCartItemId(Long cartItemId) {
 		this.cartItemId = cartItemId;
 	}
@@ -39,11 +39,11 @@ public class ShoppingCart {
 		this.userId = userId;
 	}
 
-	public Long [] getGoodsId() {
+	public Long[] getGoodsId() {
 		return goodsId;
 	}
 
-	public void setGoodsId(Long [] goodsId) {
+	public void setGoodsId(Long[] goodsId) {
 		this.goodsId = goodsId;
 	}
 
@@ -78,10 +78,10 @@ public class ShoppingCart {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "ShoppingCart [cartItemId=" + cartItemId + ", userId=" + userId + ", goodsId=" + goodsId
+		return "ShoppingCart [cartItemId=" + cartItemId + ", userId=" + userId + ", goodsId=" + Arrays.toString(goodsId)
 				+ ", goodsCount=" + goodsCount + ", isDeleted=" + isDeleted + ", createDate=" + createDate
 				+ ", updateDate=" + updateDate + "]";
 	}
